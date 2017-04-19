@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Light-Weight Lending Web App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="submitscript.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 id="LenderWelcomePrompt"></h1>
+            </div>
+        </div>
+        
+        <div class="container">
+        
+            <form method="POST" action="javascript:onSubmit();">
+                <h2>Loan Information</h2>
+                <div class="well">
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input id="amount" type="number" class="form-control" name="amount" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="term">Term</label>
+                        <input id="term" type="number" class="form-control" name="term" required/>
+                    </div>
+                </div>
+                <h2>Applicant Info</h2>
+                <div class="well">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" class="form-control" name="firstName" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" class="form-control" name="lastName" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="ssn">SSN</label>
+                        <input id="ssn" type="text" pattern="\d{3}[\-]\d{2}[\-]\d{4}" onkeyup='mask(this, mssn);' onblur='mask(this, mssn)' class="form-control" name="ssn" placeholder="xxx-xx-xxxx" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" class="form-control" name="email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input id="phone" type="tel" pattern="\(\d{3}\) \d{3}[\-]\d{4}" class="form-control" onkeyup='mask(this, mphone);' onblur='mask(this, mphone)' name="phoneNumber"/>
+                    </div>
+                </div>
+                <h2>Employment Info</h2>
+                <div class="well">
+                    <div class="form-group">
+                        <label for="employer">Employer</label>
+                        <input id="employer" type="text" class="form-control" name="employer"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="income">Income</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input id="income" type="number" class="form-control" name="income" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="incomeFreq">Income Frequency</label>
+                        <select id="incomeFreq" class="form-control" name="incomeFreq">
+                            <option value="Yearly">Yearly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Bi-Weekly">Bi-Weekly</option>
+                            <option value="Weekly">Weekly</option>
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input class="branchEmployee" id="isBranchEmployee" type="checkbox" value="">
+                            Branch Employee
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="employeeID">Employee ID</label>
+                        <input id="employeeID" type="text" class="form-control" pattern="\d{3}" name="employeeID" placeholder="###" disabled/>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-default"/>
+            </form>
+    
+        </div>
+    </body>
+</html>
