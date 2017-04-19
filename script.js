@@ -1,8 +1,8 @@
 $(document).ready(function(){
   //dev mode
-  var uri = "https://small-scale-lending-api-btvanhooser.c9users.io:8080";
+  //var uri = "https://small-scale-lending-api-btvanhooser.c9users.io:8080";
   //prod mode
-  //var uri = "https://simple-lending-api.herokuapp.com/";
+  var uri = "https://simple-lending-api.herokuapp.com/";
   sessionStorage.setItem('uri', uri);
   var settingsForTempUsers = {
     "async": true,
